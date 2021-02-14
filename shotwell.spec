@@ -82,7 +82,6 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dinstall-apport-hook=false  builddir
 ninja -v -C builddir
 
-
 %install
 DESTDIR=%{buildroot} ninja -C builddir install
 
@@ -117,6 +116,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Shotwell.appdata.xml
 %{_mandir}/man1/*
+/usr/share/apport/package-hooks/shotwell.py
 
 
 %changelog
