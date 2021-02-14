@@ -1,5 +1,5 @@
 Name:           shotwell
-Version:        0.31.2
+Version:        0.31.3
 Release:        1
 Summary:        A photo organizer for the GNOME desktop
 
@@ -48,6 +48,7 @@ BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
 BuildRequires:  pkgconfig(sqlite3) >= 3.5.9
 BuildRequires:  pkgconfig(webkit2gtk-4.0) >= 2.6.3
+BuildRequires:  pkgconfig(libsecret-1)
 
 # Needed by the publishing plugins
 BuildRequires:  pkgconfig(rest-0.7) >= 0.7
@@ -70,7 +71,6 @@ making it easy to experiment and correct errors.
 
 %build
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574700391
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
