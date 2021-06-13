@@ -2,13 +2,9 @@ Name:           shotwell
 Version:        0.31.3
 Release:        1
 Summary:        A photo organizer for the GNOME desktop
-
-# LGPLv2+ for the code
-# CC-BY-SA for some of the icons
 License:        LGPLv2+ and CC-BY-SA
 URL:            https://wiki.gnome.org/Apps/Shotwell
 Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%{version}.tar.xz
-
 BuildRequires:  vala
 BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
