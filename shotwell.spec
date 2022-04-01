@@ -1,11 +1,11 @@
 Name:           shotwell
-Version:        0.31.3
+Version:        0.30.14
 Release:        1
 Summary:        A photo organizer for the GNOME desktop
 License:        LGPLv2+ and CC-BY-SA
 URL:            https://wiki.gnome.org/Apps/Shotwell
-Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%{version}.tar.xz
-Patch0:         shotwell-0.31.3-vapi_fixes.patch
+#Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%%{version}.tar.xz
+Source0:         https://gitlab.gnome.org/GNOME/shotwell/-/archive/master/shotwell-master.tar.gz
 BuildRequires:  vala
 BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
@@ -63,10 +63,7 @@ making it easy to experiment and correct errors.
 
 
 %prep
-%setup
-%patch0 -p1
-# fix duplicate task
-sed -i "52d;53d;54d;55d" help/meson.build
+%setup -n shotwell-master
 
 
 %build
@@ -79,7 +76,7 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson -Dinstall_apport_hook=false --libdir=lib64 --prefix=/usr --buildtype=plain  builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain  builddir
 ninja -v -C builddir
 
 %install
@@ -116,6 +113,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Shotwell.appdata.xml
 %{_mandir}/man1/*
+/usr/share/apport/package-hooks/shotwell.py
 
 
 %changelog
