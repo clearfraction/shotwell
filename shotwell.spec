@@ -1,11 +1,11 @@
 Name:           shotwell
-Version:        0.30.15
+Version:        0.31.4
 Release:        1
 Summary:        A photo organizer for the GNOME desktop
 License:        LGPLv2+ and CC-BY-SA
 URL:            https://wiki.gnome.org/Apps/Shotwell
-#Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%%{version}.tar.xz
-Source0:         https://gitlab.gnome.org/GNOME/shotwell/-/archive/master/shotwell-master.tar.gz
+Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%{version}.tar.xz
+#Source0:         https://gitlab.gnome.org/GNOME/shotwell/-/archive/master/shotwell-master.tar.gz
 BuildRequires:  vala
 BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
@@ -39,7 +39,7 @@ BuildRequires:  pkgconfig(libexif) >= 0.6.16
 BuildRequires:  pkgconfig(libgdata)
 BuildRequires:  pkgconfig(libgphoto2) >= 2.5.0
 BuildRequires:  pkgconfig(libraw) >= 0.13.2
-BuildRequires:  pkgconfig(libsoup-2.4) >= 2.42.0
+BuildRequires:  libsoup-dev
 BuildRequires:  pkgconfig(libwebp)
 BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
@@ -63,7 +63,7 @@ making it easy to experiment and correct errors.
 
 
 %prep
-%setup -n shotwell-master
+%setup
 
 
 %build
@@ -72,10 +72,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FCFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export FFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
+export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain  builddir
 ninja -v -C builddir
 
