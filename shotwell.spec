@@ -5,7 +5,7 @@ Summary:        A photo organizer for the GNOME desktop
 License:        LGPLv2+ and CC-BY-SA
 URL:            https://wiki.gnome.org/Apps/Shotwell
 Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%{version}.tar.xz
-#Source0:         https://gitlab.gnome.org/GNOME/shotwell/-/archive/master/shotwell-master.tar.gz
+Patch1:         https://gitlab.gnome.org/GNOME/shotwell/-/commit/cd82759231e5ece2fa0dea40397c9051d15fd5c2.patch 
 BuildRequires:  vala
 BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
@@ -64,6 +64,8 @@ making it easy to experiment and correct errors.
 
 
 %prep
+%patch1 -p1
+
 %setup
 
 
