@@ -61,11 +61,10 @@ editing, like crop, red-eye correction, color adjustments, and straighten.
 Shotwell's non-destructive photo editor does not alter your master photos,
 making it easy to experiment and correct errors.
 
-
 %prep
 
 %setup
-
+git config --global --add safe.directory /home
 
 %build
 export LANG=C.UTF-8
