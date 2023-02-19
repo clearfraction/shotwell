@@ -40,6 +40,7 @@ BuildRequires:  pkgconfig(libgdata)
 BuildRequires:  pkgconfig(libgphoto2) >= 2.5.0
 BuildRequires:  pkgconfig(libraw) >= 0.13.2
 BuildRequires:  libsoup-dev
+BuildRequires:  libportal-dev
 BuildRequires:  pkgconfig(libwebp)
 BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
