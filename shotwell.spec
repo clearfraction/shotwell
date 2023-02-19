@@ -36,7 +36,7 @@ BuildRequires:  pkgconfig(gudev-1.0) >= 145
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(libexif) >= 0.6.16
 BuildRequires:  pkgconfig(libgdata)
-BuildRequires:  pkgconfig(libgphoto2) >= 2.5.0
+BuildRequires:  libgphoto2-dev
 BuildRequires:  pkgconfig(libraw) >= 0.13.2
 BuildRequires:  libsoup-dev
 BuildRequires:  libportal-dev
