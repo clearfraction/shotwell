@@ -64,7 +64,7 @@ making it easy to experiment and correct errors.
 
 
 %prep
-%patch1 -p1
+%patch1
 
 %setup
 
