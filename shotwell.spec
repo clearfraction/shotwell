@@ -81,10 +81,8 @@ ninja -v -C builddir
 
 %install
 DESTDIR=%{buildroot} ninja -C builddir install
-
-
 %find_lang %{name} --with-gnome
-
+rm -rf %{buildroot}/usr/share/man
 
 %check
 desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell.desktop
@@ -112,7 +110,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Shotwell.png
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Shotwell.appdata.xml
-%{_mandir}/man1/*
 /usr/share/apport/package-hooks/shotwell.py
 
 
