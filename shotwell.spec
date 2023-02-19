@@ -5,7 +5,6 @@ Summary:        A photo organizer for the GNOME desktop
 License:        LGPLv2+ and CC-BY-SA
 URL:            https://wiki.gnome.org/Apps/Shotwell
 Source0:        https://download.gnome.org/sources/shotwell/0.31/shotwell-%{version}.tar.xz
-Patch1:         https://gitlab.gnome.org/GNOME/shotwell/-/commit/cd82759231e5ece2fa0dea40397c9051d15fd5c2.patch 
 BuildRequires:  vala
 BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
@@ -64,7 +63,6 @@ making it easy to experiment and correct errors.
 
 
 %prep
-%patch1
 
 %setup
 
@@ -79,7 +77,7 @@ export CFLAGS="$CFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interp
 export FCFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 export FFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain  builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -D unity_support=false -D dupe_detection=false -D install_apport_hook=false builddir
 ninja -v -C builddir
 
 %install
