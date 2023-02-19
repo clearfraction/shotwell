@@ -11,7 +11,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  appstream-glib >= 0.7.3
 BuildRequires:  gettext
 BuildRequires:  itstool
-BuildRequires:  meson
+BuildRequires:  meson cmake
 BuildRequires:  pkgconfig(atk)
 BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(champlain-0.12)
@@ -44,7 +44,7 @@ BuildRequires:  pkgconfig(libwebp)
 BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
 BuildRequires:  pkgconfig(sqlite3) >= 3.5.9
-BuildRequires:  pkgconfig(webkit2gtk-4.0) >= 2.6.3
+BuildRequires:  pkgconfig(webkit2gtk-4.1) 
 BuildRequires:  pkgconfig(libsecret-1)
 
 # Needed by the publishing plugins
