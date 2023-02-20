@@ -64,7 +64,7 @@ making it easy to experiment and correct errors.
 
 %prep
 
-%setup
+%setup -n shotwell-master
 git config --global --add safe.directory /home
 
 %build
