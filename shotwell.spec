@@ -95,7 +95,6 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 
 %files -f %{name}.lang
 %license COPYING
-%doc README.md NEWS THANKS AUTHORS
 %{_bindir}/shotwell
 %{_libdir}/shotwell
 %{_libdir}/libshotwell-authenticator.so.*
@@ -111,6 +110,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Shotwell.png
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Shotwell.appdata.xml
+/usr/share/applications/org.gnome.Shotwell-Profile-Browser.desktop
 
 
 %changelog
