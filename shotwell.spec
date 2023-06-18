@@ -45,7 +45,7 @@ BuildRequires:  pkgconfig(libwebp)
 BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
 BuildRequires:  pkgconfig(sqlite3) >= 3.5.9
-BuildRequires:  pkgconfig(webkit2gtk-4.1) 
+BuildRequires:  webkitgtk60-dev gcr-dev
 BuildRequires:  pkgconfig(libsecret-1)
 
 # Needed by the publishing plugins
@@ -77,7 +77,7 @@ export CFLAGS="$CFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interp
 export FCFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 export FFLAGS="$FFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
 export CXXFLAGS="$CXXFLAGS -Ofast -falign-functions=32 -fno-lto -fno-semantic-interposition -mprefer-vector-width=256 "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -D unity_support=false -D dupe_detection=false -D install_apport_hook=false builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -D dupe_detection=false -D install_apport_hook=false builddir
 ninja -v -C builddir
 
 %install
