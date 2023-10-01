@@ -45,7 +45,7 @@ BuildRequires:  pkgconfig(libwebp)
 BuildRequires:  pkgconfig(libwebpdemux)
 BuildRequires:  pkgconfig(libxml-2.0) >= 2.6.32
 BuildRequires:  pkgconfig(sqlite3) >= 3.5.9
-BuildRequires:  webkitgtk60-dev gcr-dev
+BuildRequires:  webkitgtk-dev gcr-dev
 BuildRequires:  pkgconfig(libsecret-1)
 
 # Needed by the publishing plugins
