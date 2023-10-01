@@ -60,7 +60,7 @@ Shotwell's non-destructive photo editor does not alter your master photos,
 making it easy to experiment and correct errors.
 
 %prep
-%setup -n shotwell-master
+%setup -n shotwell-%{version}
 git config --global --add safe.directory /home
 
 %build
