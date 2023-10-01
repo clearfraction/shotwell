@@ -48,9 +48,6 @@ BuildRequires:  pkgconfig(sqlite3) >= 3.5.9
 BuildRequires:  webkitgtk-dev gcr-dev
 BuildRequires:  pkgconfig(libsecret-1)
 
-# Needed by the publishing plugins
-BuildRequires:  pkgconfig(rest-0.7) >= 0.7
-
 # used by shotwell-settings-migrator
 Requires:       dconf
 
@@ -63,7 +60,6 @@ Shotwell's non-destructive photo editor does not alter your master photos,
 making it easy to experiment and correct errors.
 
 %prep
-
 %setup -n shotwell-master
 git config --global --add safe.directory /home
 
