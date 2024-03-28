@@ -100,13 +100,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 %{_libdir}/libshotwell-plugin-dev-1.0.so.*
 %exclude %{_libdir}/libshotwell-plugin-dev-1.0.so
 %{_libexecdir}/shotwell
-%{_datadir}/applications/org.gnome.Shotwell.desktop
-%{_datadir}/applications/org.gnome.Shotwell-Viewer.desktop
+%{_datadir}/applications/*.desktop
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Shotwell.png
 %{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 %{_datadir}/metainfo/org.gnome.Shotwell.appdata.xml
-/usr/share/applications/org.gnome.Shotwell-Profile-Browser.desktop
 
 
 %changelog
