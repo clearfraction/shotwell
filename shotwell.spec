@@ -104,6 +104,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/org.gnome.Shotwell-Vi
 /usr/share/glib-2.0/schemas/*.xml
 /usr/share/icons/hicolor/*/apps/*.png
 /usr/share/icons/hicolor/symbolic/apps/*.svg
+/usr/share/icons/hicolor/scalable/apps/*.svg
 /usr/share/metainfo/org.gnome.Shotwell.appdata.xml
 
 
